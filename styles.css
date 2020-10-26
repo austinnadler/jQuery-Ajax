@@ -1,0 +1,8 @@
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.table > tbody > tr > td {
+    border: 1px solid black;
+}
