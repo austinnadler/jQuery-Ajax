@@ -1,5 +1,6 @@
 <?php
     // File: index.php
+    $id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -11,23 +12,44 @@
         <link href="../styles.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/09a54ca737.js" crossorigin="anonymous"></script>
-        <script src="../js/insertIncident.js"></script>
+        <script src="../js/updateIncident.js"></script>
     </head>
 
     <body>
+        <input id="incId" value="<?php echo $id; ?>" style="display: none;" >
         <header></header>
 
         <main>
             <div class="w3-center">
                 <form id="incidentForm" name="incidentForm" action="" method="POST">
-                    <h1>New Incident</h1>
-                    <p><input name="desc" id="desc" type="text" placeholder="Short description"></p>
+                    <h1>Edit Incident
+                        <br><span id="incNumber"></span>
+                    </h1>
+                    <textarea name="desc" id="desc" placeholder="Short description" cols="80" rows="3"></textarea>
+                    <br><br>
+                    <span>Opened </span>
+                    <input readonly id="opened">
+                    <span>Resolved </span>
+                    <input readonly id="resolved">
+                    <br><br>
+                    <span>Priority </span>
                     <select name="priority" id="priority">
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                         <option value="Critical">Critical</option>
                     </select>
+                    <span>State </span>
+                    <select id="state">
+                        <option value="New">New</option>
+                        <option value="Assigned">Assigned</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Closed">Closed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                    <br><br>
+                    <textarea id="resolution" cols="80" rows="10"></textarea>
                     <p><a class="w3-btn w3-blue" id="btnSubmit">Submit</a></p> <!-- Submit cannot be a button tag or it interferes with redirecting back to index.php after insertion -->
                 </form>
             </div>

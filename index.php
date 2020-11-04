@@ -11,7 +11,8 @@
         <link href="styles.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/09a54ca737.js" crossorigin="anonymous"></script>
-        <script src="js/incidents.js"></script>
+        <script src="js/selectAllIncidents.js"></script>
+        <script src="js/deleteIncident.js"></script>
     </head>
 
     <body>

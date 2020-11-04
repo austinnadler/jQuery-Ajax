@@ -18,10 +18,12 @@
         $sql = "delete from portal.incident where id=?;";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(1, $id);
-        $statement->execute();
+        $affectedRows = $statement->execute();
         $pdo = null;
         if($affectedRows == 1)  { 
             echo "success";
+        } else {
+            echo "DELETE failed in deleteIncident.php";
         }
     } catch(PDOException $e) {
         echo "Database error in incidents/deleteIncident.php: " . $e->getMessage();
